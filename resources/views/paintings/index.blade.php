@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container mt-5">
+    <div class="row justify-content-center mt-3">
         <div class="mb-5 text-center">
             <a href="{{ route('paintings.create') }}" class="btn btn-warning"> Add New Painting</a>
         </div>
@@ -78,6 +78,5 @@
                 {{ $images->links('vendor.pagination.daisyui') }}
             </div>
         </div>
-    </div>
     </div>
 </x-layout>
