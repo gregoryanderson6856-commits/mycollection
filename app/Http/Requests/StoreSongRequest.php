@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Foundation\Http\FormRequest;
+
+class StoreSongRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'album_id' => 'required|integer|min:1|max:500',
+            'title' => 'required|string|max:250',
+            'songwriter' => 'required|string|max:250',
+            'duration' => 'required|string|max:250',
+            'side' => 'required|string|max:250',
+        ];
+    }
+}
