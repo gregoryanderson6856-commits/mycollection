@@ -14,17 +14,17 @@
         <div class="space-y-2">
             <h2 class="text-sm font-semibold tracking-widest uppercase dark:text-gray-600">Pages</h2>
             <div class="flex flex-col space-y-1">
-                <a rel="noopener noreferrer" href="#">Homepage</a>
-                <a rel="noopener noreferrer" href="#">About</a>
-                <a rel="noopener noreferrer" href="#">Contact</a>
+                <a rel="noopener noreferrer" href="{{ route('home') }}">Home</a>
+                <a rel="noopener noreferrer" href="{{ route('about') }}">About</a>
+                <a rel="noopener noreferrer" href="{{ route('contact') }}">Contact</a>
                 <a rel="noopener noreferrer" href="#">Settings</a>
             </div>
         </div>
         <div class="space-y-2">
             <h2 class="text-sm font-semibold tracking-widest uppercase dark:text-gray-600">Misc</h2>
             <div class="flex flex-col space-y-1">
-                <a rel="noopener noreferrer" href="#">Register</a>
-                <a rel="noopener noreferrer" href="#">Login</a>
+                <a rel="noopener noreferrer" href="{{ route('auth/register') }}">Register</a>
+                <a rel="noopener noreferrer" href="{{ route('auth/login') }}">Login</a>
             </div>
         </div>
     </nav>

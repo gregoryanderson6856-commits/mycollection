@@ -17,8 +17,8 @@
 /public/build
 /public/fonts-manifest.dev.json
 /public/hot
-/storage/app/public/images
 /tests/Feature/Browser
+/public/storage
 /storage/*.key
 /storage/pail
 /vendor
