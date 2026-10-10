@@ -3,7 +3,7 @@
         <div class="bg-blue-500 py-4 text-center text-white">
             <h1 class="text-4xl font-bold">Collections</h1>
 
-            <p class="mt-4">Music Paintings Tabletalk Comicbooks</p>
+           <x-banner />
         </div>
         <div class=" grid grid-cols-6 gap-4">
             <div>

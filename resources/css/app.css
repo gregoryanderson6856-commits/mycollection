@@ -16,6 +16,10 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+@media (max-width: 768px) {
+  .row { flex-direction: column; }
+}
+
 /*colors*/
 
 --color-red: hsl(14, 86%, 42%);

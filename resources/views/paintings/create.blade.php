@@ -18,11 +18,11 @@
                     >
                         @csrf
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end text-start">Name</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end text-start ">Name</label>
                             <div class="col-md-6">
                                 <input
                                     type="text"
-                                    class="form-control @error('name') is-invalid @enderror"
+                                    class="form-control @error('name') is-invalid @enderror border p-4"
                                     id="name"
                                     name="name"
                                     value="{{ old('name') }}"
@@ -38,7 +38,7 @@
                             <div class="col-md-6">
                                 <input
                                     type="text"
-                                    class="form-control @error('sku') is-invalid @enderror"
+                                    class="form-control @error('sku') is-invalid @enderror border p-4"
                                     id="sku"
                                     name="sku"
                                     value="{{ old('sku') }}"
@@ -54,7 +54,7 @@
                             <div class="col-md-6">
                                 <input
                                     type="text"
-                                    class="form-control @error('size') is-invalid @enderror"
+                                    class="form-control @error('size') is-invalid @enderror border p-4"
                                     id="size"
                                     name="size"
                                     value="{{ old('size') }}"
@@ -109,7 +109,7 @@
                             <div class="col-md-6">
                                 <input
                                     type="text"
-                                    class="form-control @error('framed') is-invalid @enderror"
+                                    class="form-control @error('framed') is-invalid @enderror border p-4"
                                     id="framed"
                                     name="framed"
                                     value="{{ old('framed', 'Matted') }}"

@@ -3,7 +3,7 @@
         <div class="bg-blue-500 py-4 text-center text-white">
             <h1 class="text-4xl font-bold">Register</h1>
 
-            <p class="mt-4">Music Paintings Tabletalk Comicbooks</p>
+            <x-banner />
         </div>
         <div class="grid grid-cols-3 gap-4">
             <div>
@@ -61,11 +61,11 @@
 
                         <button class="btn btn-primary" type="submit">Register</button>
 
-                        <p class="text-white">Already have an account? <a href="" class="link">Login</a></p>
+                        <p class="text-white">Already have an account? <a href="{{ route('auth/login') }}" class="link">Login</a></p>
                     </form>
                 </div>
             </div>
-            <div>Col 3</div>
+            <div>placeholder</div>
         </div>
     </div>
 </x-layout>

@@ -13,7 +13,7 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="album_id" class="col-md-4 col-form-label text-md-end text-start"
+                            <label for="album_id" class="col-md-4 col-form-label text-md-end text-start border p-4"
                                 >Album Id</label>
                             <div class="col-md-6">
                                 <input
