@@ -3,7 +3,7 @@
         <div class="bg-blue-500 py-4 text-center text-white">
             <h1 class="text-4xl font-bold">Login</h1>
 
-            <p class="mt-4">A utility-first CSS framework.</p>
+            <p class="mt-4">Music Paintings Tabletalk Comicbooks</p>
         </div>
         <div class="grid grid-cols-3 gap-4">
             <div>
@@ -46,7 +46,7 @@
                             </div>
                         @endif
 
-                        <button class="btn-primary" type="submit">Login</button>
+                        <button class="btn btn-primary" type="submit">Login</button>
 
                         <p class="text-whit">
                             Don't have an account? <a href="{{ route('auth/register') }}" class="link">Register</a>

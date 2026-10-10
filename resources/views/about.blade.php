@@ -3,36 +3,24 @@
         <div class="bg-blue-500 py-4 text-center text-white">
             <h1 class="text-4xl font-bold">About Us</h1>
 
-            <p class="mt-4">A utility-first CSS framework.</p>
+            <p class="mt-4">Music Paintings Tabletalk Comicbooks</p>
         </div>
-        <div class="flex grid grid-cols-6 gap-4">
+        <div class=" grid grid-cols-6 gap-4">
             <div>
                 <x-sidebar />
             </div>
             <div class="col-start-2 col-end-7">
                 <div class="container mx-auto mt-8 p-4">
-                    <p class="text-lg">Get started with Tailwind CSS and create amazing web interfaces.</p>
+                    
                 </div>
-                <div>
-                    <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg">
-                        <svg
-                            class="h-6 w-6 text-white"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            aria-hidden="true"
-                        >
-                            <!-- ... -->
-                        </svg>
+               
+                <blockquote class="text-center text-2xl font-semibold text-gray-900 italic dark:text-white">
+                    When you look
+                    <span class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-pink-500">
+                        <span class="relative text-white dark:text-gray-950">annoyed</span>
                     </span>
-                </div>
-                <h3 class="mt-5 text-base font-medium tracking-tight text-gray-900 dark:text-white">
-                    Writes upside-down
-                </h3>
-                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                    The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works
-                    in outer space.
-                </p>
+                    all the time, people think that you're busy.
+                </blockquote>
             </div>
         </div>
     </div>

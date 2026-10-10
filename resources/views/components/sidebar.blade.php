@@ -10,31 +10,21 @@
                 <a rel="noopener noreferrer" href="#">Tabletalk</a>
             </div>
         </div>
-        <div class="space-y-2">
-            <h2 class="text-sm font-semibold tracking-widest uppercase dark:text-gray-600">Dashboard</h2>
-            <div class="flex flex-col space-y-1">
-                <a rel="noopener noreferrer" href="#">Header</a>
-                <a rel="noopener noreferrer" href="#">Drawer</a>
-                <a rel="noopener noreferrer" href="#">Page Title</a>
-                <a rel="noopener noreferrer" href="#">Menus</a>
-                <a rel="noopener noreferrer" href="#">Sidebar</a>
-                <a rel="noopener noreferrer" href="#">Footer</a>
-            </div>
-        </div>
+
         <div class="space-y-2">
             <h2 class="text-sm font-semibold tracking-widest uppercase dark:text-gray-600">Pages</h2>
             <div class="flex flex-col space-y-1">
                 <a rel="noopener noreferrer" href="#">Homepage</a>
-                <a rel="noopener noreferrer" href="#">Users</a>
-                <a rel="noopener noreferrer" href="#">Tools</a>
+                <a rel="noopener noreferrer" href="#">About</a>
+                <a rel="noopener noreferrer" href="#">Contact</a>
                 <a rel="noopener noreferrer" href="#">Settings</a>
             </div>
         </div>
         <div class="space-y-2">
             <h2 class="text-sm font-semibold tracking-widest uppercase dark:text-gray-600">Misc</h2>
             <div class="flex flex-col space-y-1">
-                <a rel="noopener noreferrer" href="#">Tutorials</a>
-                <a rel="noopener noreferrer" href="#">Changelog</a>
+                <a rel="noopener noreferrer" href="#">Register</a>
+                <a rel="noopener noreferrer" href="#">Login</a>
             </div>
         </div>
     </nav>
