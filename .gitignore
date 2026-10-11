@@ -18,8 +18,8 @@
 /public/fonts-manifest.dev.json
 /public/hot
 /tests/Feature/Browser
-#/public/storage
-#/storage/*.key
+/public/storage
+/storage/*.key
 /storage/pail
 /vendor
 _ide_helper.php
