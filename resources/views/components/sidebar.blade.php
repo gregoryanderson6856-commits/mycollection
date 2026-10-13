@@ -5,9 +5,9 @@
             <h2 class="text-sm font-semibold tracking-widest uppercase dark:text-gray-600">The Collection</h2>
             <div class="flex flex-col space-y-1">
                 <a rel="noopener noreferrer" href="{{ route('music/index') }}">Music</a>
-                <a rel="noopener noreferrer" href="">Comicbooks</a>
+                <a rel="noopener noreferrer" href="{{ route('comicbooks/index') }}">Comicbooks</a>
                 <a rel="noopener noreferrer" href="">Watercolor</a>
-                <a rel="noopener noreferrer" href="#">Tabletalk</a>
+                <a rel="noopener noreferrer" href="{{ route('tabletalks/index') }}">Tabletalk</a>
             </div>
         </div>
 
