@@ -11,7 +11,7 @@
                     <div class="col-md-2">
                         <div class="max-w-sm overflow-hidden rounded pt-5 pl-8 shadow-lg" style="background: gainsboro">
                             <img
-                                class="size-92 w-3/4"
+                                class="size-92 w-3/4 ml-4"
                                 src="{{  asset('/images/Comicbooks/' . $comic->imagePath )}}"
                                 height="100px"
                                 alt="Sunset in the mountains"

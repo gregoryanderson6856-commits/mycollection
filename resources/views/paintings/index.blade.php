@@ -41,7 +41,7 @@
                                 </td>
                                  <td>{{ $image->framed }}</td>
                                 <td>
-                                    <form action="{{ route('paintings.destroy', $image->id) }}" method="post">
+                                    <form action="{{ route('paintings.destroy', $image->id) }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         @method('DELETE')
 
@@ -75,7 +75,7 @@
                         @endforelse
                     </tbody>
                 </table>
-                {{ $images->links('vendor.pagination.daisyui') }}
+                {{ $images->links() }}
             </div>
         </div>
     </div>

@@ -5,8 +5,8 @@
 
            <x-banner />
         </div>
-        <div class=" grid grid-cols-6 gap-4">
-            <div>
+        <div class=" grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 <x-sidebar />
             </div>
             <div class="col-start-2 col-end-7">
@@ -18,7 +18,7 @@
                    
                 </div>   
                   <div class="mt-8">
-                <div class="grid grid-cols-4 gap-4">
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
   <div>
     <img
                                         class="aspect-square pr-6"
