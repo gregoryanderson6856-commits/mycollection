@@ -6,6 +6,7 @@ use App\Http\Controllers\PaintingController;
 use App\Http\Controllers\SongController;
 use App\Http\Controllers\ComicbookController;
 use App\Http\Controllers\TabletalkController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,5 +42,14 @@ Route::get('/music/show/{album}', [MusicController::class, 'show'])->name('music
 Route::get('/comicbooks/', [ComicbookController::class, 'index'])->name('comicbooks/index');
 
 Route::get('/tabletalks/', [TabletalkController::class, 'index'])->name('tabletalks/index');
+
+// Accessing GET http://your-domain.test runs the query logicRoute::get('/category/items', [CategoryItemController::class, 'index'])->name('category.items.index');
+
+
+ //Route::get('/categories/{$categories}', [CategoryController::class, 'show']);
+// Route::resource('categories', CategoryController::class);
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+
+
 
 require __DIR__.'/registration/register.php';
