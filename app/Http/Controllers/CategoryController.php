@@ -13,7 +13,6 @@ class CategoryController extends Controller
     {
         $results = DB::table('category_map')
             ->select(
-                DB::raw('paintings.id as paintings_id'),
                 DB::raw('categories.name as categories_name'),
                 DB::raw('category_map.item_type'),
                 DB::raw("COALESCE(albums.title, paintings.name, comicbooks.title, tabletalks.title) as item_id")

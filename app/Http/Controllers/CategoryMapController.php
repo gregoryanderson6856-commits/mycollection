@@ -15,7 +15,7 @@ class CategoryMapController extends Controller
     {
         // Eager load all polymorphic targets via the channels
         $categories = CategoryMap::with(['albums', 'paintings', 'comicbooks', 'tabletalks'])->get();
-    dd($categories);
+    
         return response()->json([
             'success' => true,
             'data' => $categories

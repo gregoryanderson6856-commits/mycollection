@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+//use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
@@ -16,9 +16,10 @@ class Category extends Model
     public function comicbooks(): BelongsToMany { return $this->BelongsToMany(Comicbook::class, 'item', 'category_maps', 'category_id'); }
     public function tabletalks(): BelongsToMany { return $this->BelongsToMany(Tabletalk::class, 'item', 'category_maps', 'category_id'); }
     */
-
+/*
      public function mappings(): HasMany
     {
         return $this->hasMany(CategoryMap::class);
     }
+        */
 }

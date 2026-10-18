@@ -11,7 +11,7 @@ class Comicbook extends Model
 {
     /** @use HasFactory*/
     use HasFactory;
-    use AsPivot;
+  
 
     /**
      * The attributes that are mass assignable.

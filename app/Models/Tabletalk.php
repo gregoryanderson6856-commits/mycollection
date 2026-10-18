@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\Concerns\AsPivot;
+
 
 class Tabletalk extends Model
 {
-    use AsPivot;
+    
 
      protected $fillable = [
         'title',

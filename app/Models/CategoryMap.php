@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
+//use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 
 class CategoryMap extends Model
@@ -19,12 +19,12 @@ class CategoryMap extends Model
     {
         return $this->belongsTo(Category::class, 'id');
     }
-      */  
+      
 
      // Resolves to whichever item model (Album, Painting, etc.) owns this row
     public function item(): MorphTo
     {
         return $this->morphTo();
     }
-        
+        */
 }

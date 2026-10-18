@@ -45,9 +45,6 @@ Route::get('/tabletalks/', [TabletalkController::class, 'index'])->name('tableta
 
 // Accessing GET http://your-domain.test runs the query logicRoute::get('/category/items', [CategoryItemController::class, 'index'])->name('category.items.index');
 
-
- //Route::get('/categories/{$categories}', [CategoryController::class, 'show']);
-// Route::resource('categories', CategoryController::class);
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 
 

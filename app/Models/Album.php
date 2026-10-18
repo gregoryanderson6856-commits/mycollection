@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\Concerns\AsPivot;
 class Album extends Model
 {
     use HasFactory;
-    use AsPivot;
+   
 
     protected $fillable = ['band_id', 'title', 'label', 'year', 'format', 'path'];
 
@@ -24,16 +24,6 @@ class Album extends Model
     public function songs()
     {
         return $this->hasMany(Song::class);
-    }
-
-     public function categories(): BelongsToMany
-    {
-        return $this->belongsToMany(
-            CategoryMap::class,         // The target model
-            'album_categories',      // The name of the junction/pivot table
-            'albums_id',              // The foreign key on the pivot table pointing to this model
-            'category_id'            // The foreign key on the pivot table pointing to the target model
-        );
     }
 
 }
