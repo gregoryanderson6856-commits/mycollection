@@ -12,7 +12,7 @@ class Tabletalk extends Model
 
      protected $fillable = [
         'title',
-        'coverprice',
+        'price',
         'month',
         'year',
         'imagePath',
