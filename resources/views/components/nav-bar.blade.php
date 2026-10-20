@@ -38,5 +38,27 @@
             </form>
         @endguest
     </div>
-    
+
+    <div class="ml-3">
+        <a href="{{ route('cart.index') }}" class="cart-link" style="position: relative; display: inline-block;">
+            <!-- Cart Visual Anchor Badge -->
+            🛒 Shopping Cart
+            
+            @if($cartCount > 0)
+                <span class="cart-badge" style="
+                    position: absolute;
+                    top: -10px;
+                    right: -15px;
+                    background-color: #e3342f;
+                    color: white;
+                    border-radius: 50%;
+                    padding: 2px 6px;
+                    font-size: 12px;
+                    font-weight: bold;
+                ">
+                    {{ $cartCount }}
+                </span>
+            @endif
+        </a>
+    </div>
 </div>

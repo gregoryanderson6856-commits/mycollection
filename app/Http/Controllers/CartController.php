@@ -49,7 +49,7 @@ class CartController extends Controller {
             ],
             [
                 'price_at_addition' => $item->price,
-                'quantity'          => DB::raw("quantity + " . $validated['quantity'])
+                'quantity'          =>  $validated['quantity']
             ]
         );
 

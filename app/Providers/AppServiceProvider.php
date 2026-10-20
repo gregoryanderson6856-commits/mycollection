@@ -6,6 +6,9 @@ use App\Models\User;
 use Illuminate\Auth\Access\Response;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Auth;
+use App\Models\CartItem;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +30,18 @@ class AppServiceProvider extends ServiceProvider
             return $user->role === 'admin'
                     ? Response::allow()
                     : Response::deny('You must be an administrator.');
+        });
+
+         // Shares the $cartCount variable with EVERY single blade file automatically
+        View::composer('*', function ($view) {
+            if (Auth::check()) {
+                // Sums up the 'quantity' column for the current logged-in user
+                $count = CartItem::where('user_id', Auth::id())->sum('quantity');
+            } else {
+                $count = 0;
+            }
+
+            $view->with('cartCount', $count);
         });
     }
 }

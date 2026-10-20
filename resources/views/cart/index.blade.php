@@ -14,6 +14,7 @@
         <table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%;">
             <thead>
                 <tr>
+                
                     <th>Category Type</th>
                     <th>Product Title</th>
                     <th>Unit Price</th>
@@ -31,11 +32,13 @@
                         $cartTotal += $subtotal;
                     @endphp
                     <tr>
+                      
                         <td><strong>{{ $item->type_label }}</strong></td>
                         <td>{{ $details->title ?? 'Title details missing' }}</td>
                         <td>${{ number_format($item->price_at_addition, 2) }}</td>
                         <td>{{ $item->quantity }}</td>
                         <td>${{ number_format($subtotal, 2) }}</td>
+                    
                     </tr>
                 @endforeach
                 <tr>

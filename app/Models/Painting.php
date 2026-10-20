@@ -18,6 +18,7 @@ class Painting extends Model
         'size',
         'month',
         'year',
+        'price',
         'image_path',
         'framed',
     ];

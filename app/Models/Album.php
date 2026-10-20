@@ -12,7 +12,7 @@ class Album extends Model
     use HasFactory;
    
 
-    protected $fillable = ['band_id', 'title', 'label', 'year', 'format', 'path'];
+    protected $fillable = ['band_id', 'title', 'label', 'year', 'price', 'format', 'path'];
 
     public function bands(): BelongsTo
     {

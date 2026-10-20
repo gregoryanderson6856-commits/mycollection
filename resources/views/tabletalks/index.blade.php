@@ -25,25 +25,28 @@
                              <div class="px-6 py-4">
                                  <span class="mr-2 mb-2 inline-block text-sm font-semibold text-gray-700">{{ $tabletalk->month }}</span>
                                 <span class="mr-2 mb-2 inline-block text-sm font-semibold text-gray-700">{{ $tabletalk->year }}</span>
-                                <span class="mr-2 mb-2 inline-block text-sm font-semibold text-gray-700">${{ $tabletalk->coverprice }}</span>
+                                <span class="mr-2 mb-2 inline-block text-sm font-semibold text-gray-700">${{ $tabletalk->price }}</span>
+                                <span class="mr-2 mb-2 inline-block text-sm font-semibold text-gray-700">
+                                <!-- Example of how a specific Tabletalk item select looks in HTML -->
+                                <form action="{{ route('cart.add') }}" method="POST">
+                                    @csrf
+                                    <!-- 1. The Hidden Identifiers (Hardcoded by the Blade loop rendering the page) -->
+                                    <input type="hidden" name="item_type" value="tabletalks">
+                                    <input type="hidden" name="item_id" value="{{ $tabletalk->id }}">
+                                    
+                                    <!-- 2. The User Interaction Fields -->
+                    
+                                    <input type="hidden" id="qty" name="quantity" value="1" min="1">
+                                    
+                                    <button type="submit">Add to Cart</button>
+                                </form>
+                                </span>
                             </div>
                         </div>
                     </div>
                 @endforeach
 
-                 <!-- Example of how a specific Comicbook item select looks in HTML -->
-                    <form action="{{ route('cart.add') }}" method="POST">
-                        @csrf
-                        <!-- 1. The Hidden Identifiers (Hardcoded by the Blade loop rendering the page) -->
-                        <input type="hidden" name="item_type" value="tabletalks">
-                        <input type="hidden" name="item_id" value="{{ $tabletalk->id }}">
-                        
-                        <!-- 2. The User Interaction Fields -->
-                        <label for="qty">Quantity:</label>
-                        <input type="number" id="qty" name="quantity" value="1" min="1">
-                        
-                        <button type="submit">Add to Cart</button>
-                    </form>
+                
 
                 <div class="mt-6"> {{ $tabletalks->links() }}</div>
             </div>
