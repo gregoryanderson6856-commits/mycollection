@@ -36,7 +36,7 @@
                 @csrf
                 <button type="submit" class="btn btn-danger">Logout</button>
             </form>
-        @endguest
+       
     </div>
 
     <div class="ml-3">
@@ -44,7 +44,7 @@
             <!-- Cart Visual Anchor Badge -->
             🛒 Shopping Cart
             
-            @if($cartCount > 0)
+            @if($cartCount >= 0)
                 <span class="cart-badge" style="
                     position: absolute;
                     top: -10px;
@@ -60,5 +60,6 @@
                 </span>
             @endif
         </a>
+         @endguest
     </div>
 </div>

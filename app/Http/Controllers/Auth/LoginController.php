@@ -29,7 +29,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             // Redirect to intended page or home
-            return redirect()->intended('/music');
+            return redirect()->intended('/');
         }
 
         // Invalid credentials, output error message

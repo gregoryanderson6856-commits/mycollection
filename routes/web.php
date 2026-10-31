@@ -1,14 +1,15 @@
 <?php
 
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\ComicbookController;
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\PaintingController;
 use App\Http\Controllers\SongController;
-use App\Http\Controllers\ComicbookController;
 use App\Http\Controllers\TabletalkController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,11 +53,17 @@ Route::get('/categories', [CategoryController::class, 'index'])->name('categorie
 Route::middleware(['auth'])->group(function () {
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
+    Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
 });
 
 Route::middleware(['auth'])->group(function () {
     Route::post('/checkout', [CheckoutController::class, 'processCheckout'])->name('checkout.process');
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
+});
 
 require __DIR__.'/registration/register.php';

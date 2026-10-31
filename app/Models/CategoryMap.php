@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 //use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 
+/**
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CategoryMap newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CategoryMap newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CategoryMap query()
+ * @mixin \Eloquent
+ */
 class CategoryMap extends Model
 {
      protected $fillable = ['categories_id', 'item_id', 'item_type'];

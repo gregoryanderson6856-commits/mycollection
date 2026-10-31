@@ -25,6 +25,7 @@ class PaintingFactory extends Factory
             'size' => fake()->name(),
             'month' => fake()->name(),
             'year' => fake()->dateTime(),
+            'price' => fake()->randomNumber(),
             'image_path' => fake()->name(),
         ];
     }

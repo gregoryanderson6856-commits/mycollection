@@ -4,6 +4,7 @@
 }
 
 
+
 @source "../views/**/*.blade.php";
 @source "../**/*.js";
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -39,4 +40,16 @@
       }
     }
   }
+
+  .card {
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.badge {
+    font-size: 0.8rem;
+}
 }

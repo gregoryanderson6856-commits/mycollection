@@ -24,6 +24,7 @@ class AlbumFactory extends Factory
             'title' => fake()->name(),
             'label' => fake()->name(),
             'year' => fake()->dateTime(),
+
             'format' => fake()->randomElement(['vinyl', 'cd']),
             'path' => fake()->name(),
         ];
