@@ -107,7 +107,7 @@
                         </div>
                     </a>
 
-                    <a href="{{ route('paintings.index') }}" class="group overflow-hidden rounded-2xl border border-[#e1ddd2] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <a href="{{ route('watercolor/index') }}" class="group overflow-hidden rounded-2xl border border-[#e1ddd2] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <div class="overflow-hidden bg-[#e5e2d9]">
                             <img src="{{ asset('images/paintings/1791158557.jpg') }}" alt="Original painting from the art collection" class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
                         </div>

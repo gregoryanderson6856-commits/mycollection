@@ -10,6 +10,7 @@ use App\Http\Controllers\PaintingController;
 use App\Http\Controllers\SongController;
 use App\Http\Controllers\TabletalkController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\WaterColorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,9 @@ Route::get('/music/show/{album}', [MusicController::class, 'show'])->name('music
 Route::get('/comicbooks/', [ComicbookController::class, 'index'])->name('comicbooks/index');
 
 Route::get('/tabletalks/', [TabletalkController::class, 'index'])->name('tabletalks/index');
+
+Route::get('/watercolor/', [WaterColorController::class, 'index'])->name('watercolor/index');
+Route::get('/watercolor/show/{watercolor}', [WaterColorController::class, 'show'])->name('watercolor/show');
 
 // Accessing GET http://your-domain.test runs the query logicRoute::get('/category/items', [CategoryItemController::class, 'index'])->name('category.items.index');
 
