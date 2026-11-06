@@ -42,20 +42,20 @@
             <div class="relative mx-auto w-full max-w-xl">
                 <div class="absolute -top-7 right-8 size-24 rounded-full bg-[#e6b678]/45 blur-2xl sm:right-14"></div>
                 <div class="absolute -bottom-8 -left-7 size-32 rounded-full bg-[#aab9a8]/50 blur-2xl"></div>
-                <div class="relative overflow-hidden rounded-[2rem] border-[10px] border-white bg-[#e6e1d4] shadow-[0_28px_70px_-35px_rgba(24,35,33,0.5)]">
+                <div class="relative overflow-hidden rounded-4xl border-10px border-white bg-[#e6e1d4] shadow-[0_28px_70px_-35px_rgba(24,35,33,0.5)]">
                     <img
                         src="{{ asset('images/paintings/1791158140.jpg') }}"
                         alt="A painting from the original art collection"
-                        class="aspect-[4/4.5] w-full object-cover"
+                        class="aspect-4/4.5 w-full object-cover"
                     />
                     <div class="absolute left-6 top-6 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold tracking-[0.16em] text-[#34443c] uppercase shadow-sm">
                         Collected by hand
                     </div>
                 </div>
 
-                <div class="absolute -bottom-6 -left-5 flex max-w-[15rem] items-center gap-4 rounded-2xl border border-[#e7e2d7] bg-white p-3 shadow-xl sm:-left-10 sm:bottom-8">
+                <div class="absolute -bottom-6 -left-5 flex max-w-60 items-center gap-4 rounded-2xl border border-[#e7e2d7] bg-white p-3 shadow-xl sm:-left-10 sm:bottom-8">
                     <img
-                        src="{{ asset('storage/images/Albums/abbeyroad.jpg') }}"
+                        src="{{ 'storage/images/Albums/abbeyroad.jpg' }}"
                         alt="Abbey Road album cover"
                         class="size-16 rounded-xl object-cover"
                     />
@@ -92,7 +92,7 @@
                 <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                     <a href="{{ route('music/index') }}" class="group overflow-hidden rounded-2xl border border-[#e1ddd2] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <div class="overflow-hidden bg-[#e5e2d9]">
-                            <img src="{{ asset('storage/images/Albums/abbeyroad.jpg') }}" alt="Classic album cover in the music collection" class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+                            <img src="{{ 'storage/images/Albums/abbeyroad.jpg' }}" alt="Classic album cover in the music collection" class="aspect-4/3 w-full object-cover transition duration-500 group-hover:scale-105" />
                         </div>
                         <div class="flex items-center justify-between gap-3 p-5">
                             <div>
@@ -109,7 +109,7 @@
 
                     <a href="{{ route('watercolor/index') }}" class="group overflow-hidden rounded-2xl border border-[#e1ddd2] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <div class="overflow-hidden bg-[#e5e2d9]">
-                            <img src="{{ asset('images/paintings/1791158557.jpg') }}" alt="Original painting from the art collection" class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+                            <img src="{{ asset('images/paintings/1791158557.jpg') }}" alt="Original painting from the art collection" class="aspect-4\3 w-full object-cover transition duration-500 group-hover:scale-105" />
                         </div>
                         <div class="flex items-center justify-between gap-3 p-5">
                             <div>
@@ -126,7 +126,7 @@
 
                     <a href="{{ route('comicbooks/index') }}" class="group overflow-hidden rounded-2xl border border-[#e1ddd2] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <div class="overflow-hidden bg-[#e5e2d9]">
-                            <img src="{{ asset('images/Comicbooks/abouttime.jpg') }}" alt="Comic book cover from the comic collection" class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+                            <img src="{{ asset('images/Comicbooks/abouttime.jpg') }}" alt="Comic book cover from the comic collection" class="aspect-4/3 w-full object-cover transition duration-500 group-hover:scale-105" />
                         </div>
                         <div class="flex items-center justify-between gap-3 p-5">
                             <div>
@@ -143,7 +143,7 @@
 
                     <a href="{{ route('tabletalks/index') }}" class="group overflow-hidden rounded-2xl border border-[#e1ddd2] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <div class="overflow-hidden bg-[#e5e2d9]">
-                            <img src="{{ asset('images/Tabletalk/11thcentury.jpg') }}" alt="Tabletalk cover from the reading collection" class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+                            <img src="{{ asset('images/Tabletalk/11thcentury.jpg') }}" alt="Tabletalk cover from the reading collection" class="aspect-4/3 w-full object-cover transition duration-500 group-hover:scale-105" />
                         </div>
                         <div class="flex items-center justify-between gap-3 p-5">
                             <div>

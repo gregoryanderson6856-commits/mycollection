@@ -36,7 +36,7 @@
                                 <img
                                     src="{{ asset('images/Comicbooks/' . $comic->imagePath) }}"
                                     alt="{{ $comic->title }} cover"
-                                    class="aspect-[3/4] w-3/4 object-cover transition duration-500 group-hover:scale-105"
+                                    class="aspect-3/4 w-3/4 object-cover transition duration-500 group-hover:scale-105"
                                     loading="lazy"
                                 />
                             </div>

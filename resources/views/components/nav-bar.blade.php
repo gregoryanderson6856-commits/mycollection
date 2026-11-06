@@ -36,7 +36,7 @@
                 @csrf
                 <button type="submit" class="btn btn-danger">Logout</button>
             </form>
-       
+        @endguest
     </div>
 
     <div class="ml-3">
@@ -60,6 +60,6 @@
                 </span>
             @endif
         </a>
-         @endguest
+         
     </div>
 </div>
