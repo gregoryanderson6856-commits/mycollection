@@ -55,7 +55,7 @@
 
                 <div class="absolute -bottom-6 -left-5 flex max-w-60 items-center gap-4 rounded-2xl border border-[#e7e2d7] bg-white p-3 shadow-xl sm:-left-10 sm:bottom-8">
                     <img
-                        src="{{ asset('images/albums/abbeyroad.jpg') }}"
+                        src="{{ asset('images/albums/beatles65.jpg') }}"
                         alt="Abbey Road album cover"
                         class="size-16 rounded-xl object-cover"
                     />
@@ -92,7 +92,7 @@
                 <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                     <a href="{{ route('music/index') }}" class="group overflow-hidden rounded-2xl border border-[#e1ddd2] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <div class="overflow-hidden bg-[#e5e2d9]">
-                            <img src="{{ 'storage/images/Albums/abbeyroad.jpg' }}" alt="Classic album cover in the music collection" class="aspect-4/3 w-full object-cover transition duration-500 group-hover:scale-105" />
+                            <img src="{{ asset('images/albums/beatles65.jpg') }}" alt="Classic album cover in the music collection" class="aspect-4/3 w-full object-cover transition duration-500 group-hover:scale-105" />
                         </div>
                         <div class="flex items-center justify-between gap-3 p-5">
                             <div>
