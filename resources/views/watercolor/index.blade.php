@@ -55,6 +55,23 @@
                                         </p>
                                     @endif
                                 </div>
+
+                                <form action="{{ route('cart.add') }}" method="POST" class="mt-2">
+                                    @csrf
+                                    <input type="hidden" name="item_type" value="paintings">
+                                    <input type="hidden" name="item_id" value="{{ $watercolor->id }}">
+                                    <input type="hidden" name="quantity" value="1">
+
+                                    <button
+                                        type="submit"
+                                        class="inline-flex w-full items-center justify-center gap-0.5 rounded-full bg-[#1d302b] px-0.5 py-1 text-[0.55rem] font-semibold whitespace-nowrap text-white transition hover:bg-[#30483f]"
+                                    >
+                                        Add to cart
+                                        <svg aria-hidden="true" class="size-2" viewBox="0 0 20 20" fill="none">
+                                            <path d="M4.167 10h11.666M10 4.167 15.833 10 10 15.833" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </form>
                             </div>
                         </article>
                     @empty
