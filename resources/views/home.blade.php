@@ -55,7 +55,7 @@
 
                 <div class="absolute -bottom-6 -left-5 flex max-w-60 items-center gap-4 rounded-2xl border border-[#e7e2d7] bg-white p-3 shadow-xl sm:-left-10 sm:bottom-8">
                     <img
-                        src="{{ 'storage/images/Albums/abbeyroad.jpg' }}"
+                        src="{{ asset('images/albums/abbeyroad.jpg') }}"
                         alt="Abbey Road album cover"
                         class="size-16 rounded-xl object-cover"
                     />
