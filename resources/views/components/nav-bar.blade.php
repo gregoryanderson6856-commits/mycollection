@@ -12,9 +12,11 @@
             <li><a href="{{ route('home') }}">Home</a></li>
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
-
+            @auth
+                
             <li>
                 <details>
+                    
                     <summary>Collections</summary>
                     <ul class="bg-base-100 z-1 w-40 p-2">
                         <li><a href="{{ route('albums.index') }}">Albums</a></li>
@@ -23,13 +25,16 @@
                         <li><a href="{{ route('paintings.index') }}">Paintings</a></li>
                     </ul>
                 </details>
+                   
             </li>
+            
         </ul>
     </div>
     <div class="navbar-end">
         @guest
             <a href="{{ route('auth/register') }}" class="btn btn-outline btn-primary mr-2">Register</a>
             <a href="{{ route('auth/login') }}" class="btn btn-outline btn-primary">Login</a>
+            
         @else
             <!-- Shown ONLY to authenticated users -->
             <form method="POST" action="{{ route('logout') }}">
@@ -37,6 +42,8 @@
                 <button type="submit" class="btn btn-danger">Logout</button>
             </form>
         @endguest
+        @endauth
+        
     </div>
 
     <div class="ml-3">
