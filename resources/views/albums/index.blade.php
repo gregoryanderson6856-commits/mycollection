@@ -32,7 +32,7 @@
                                     </td>
                                     <td>
                                         <img
-                                            src="{{ asset('storage/images/Albums/' . $album->path) }}"
+                                            src="{{ asset('/images/albums/' . $album->path) }}"
                                             alt="Uploaded Image"
                                             width="100px"
                                             class="img-fluid"
