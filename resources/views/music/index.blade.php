@@ -34,7 +34,7 @@
                         <article class="group overflow-hidden rounded-2xl border border-[#e1ddd2] bg-[#e5e2d9] transition duration-300 hover:-translate-y-1 hover:shadow-xl">
                             <div class="flex justify-center overflow-hidden bg-[#e5e2d9]">
                                 <img
-                                    src="{{ asset('storage/images/Albums/' . $album->path) }}"
+                                    src="{{ asset('images/albums/' . $album->path) }}"
                                     alt="{{ $album->title }} album cover"
                                     class="aspect-square w-3/4 object-cover transition duration-500 group-hover:scale-105"
                                     loading="lazy"

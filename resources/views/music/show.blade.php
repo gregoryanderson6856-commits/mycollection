@@ -33,7 +33,7 @@
                 <article class="h-fit overflow-hidden rounded-2xl border border-[#e1ddd2] bg-[#e5e2d9] shadow-sm">
                     <div class="flex justify-center p-5 sm:p-8">
                         <img
-                            src="{{ asset('storage/images/Albums/' . $album->path) }}"
+                            src="{{ asset('images/albums/' . $album->path) }}"
                             alt="{{ $album->title }} album cover"
                             class="aspect-square w-full rounded-xl object-cover shadow-lg"
                         />
