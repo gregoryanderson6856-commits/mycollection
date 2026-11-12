@@ -35,10 +35,11 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::resource('paintings', PaintingController::class);
+Route::resource('paintings', PaintingController::class)->middleware('can:access-admin');
 
-Route::resource('albums', AlbumController::class);
+Route::resource('albums', AlbumController::class)->middleware('can:access-admin');
 Route::resource('songs', SongController::class)->middleware('can:access-admin');
+
 
 Route::get('/music/', [MusicController::class, 'index'])->name('music/index');
 Route::get('/music/show/{album}', [MusicController::class, 'show'])->name('music/show');

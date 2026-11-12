@@ -12,7 +12,7 @@
             <li><a href="{{ route('home') }}">Home</a></li>
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
-            @auth
+            
                 
             <li>
                 <details>
@@ -42,7 +42,7 @@
                 <button type="submit" class="btn btn-danger">Logout</button>
             </form>
         @endguest
-        @endauth
+        
         
     </div>
 
