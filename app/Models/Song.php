@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\DB;
 
 /**
  * @property int $song_id
@@ -41,5 +42,38 @@ class Song extends Model
     public function albums(): BelongsTo
     {
         return $this->belongsTo(Album::class);
+    }
+
+        protected static function booted(): void
+    {
+        // Runs automatically after a song is created OR updated
+        static::saved(function (Song $song) {
+            self::recalculateAlbumTime($song->album_id);
+
+            // If the song was moved to a different album, update the old album too
+            if ($song->wasChanged('album_id') && $song->getOriginal('album_id')) {
+                self::recalculateAlbumTime($song->getOriginal('album_id'));
+            }
+        });
+
+        // Runs automatically after a song is deleted
+        static::deleted(function (Song $song) {
+            self::recalculateAlbumTime($song->album_id);
+        });
+    }
+
+    protected static function recalculateAlbumTime(?int $albumId): void
+    {
+        if (! $albumId) {
+            return;
+        }
+
+        $totalSeconds = self::where('album_id', $albumId)
+            ->sum(DB::raw('TIME_TO_SEC(duration)'));
+
+        DB::table('album_time')->updateOrInsert(
+            ['album_id' => $albumId],
+            ['run_time' => gmdate('H:i:s', (int) $totalSeconds)]
+        );
     }
 }
