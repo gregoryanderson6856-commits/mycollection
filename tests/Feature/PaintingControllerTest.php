@@ -2,6 +2,7 @@
 
 use App\Models\Painting;
 use App\Models\User;
+use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use function Pest\Laravel\actingAs;
@@ -97,4 +98,91 @@ it('rejects duplicate sku entries', function () {
 
     // Assert: Only one sku exists in the database with that sku
     expect(Painting::where('sku', $sku)->count())->toBe(1);
+});
+
+test('edit page displays the selected painting', function () {
+    $painting = Painting::factory()->create([
+        'name' => 'Autumn Trees',
+        'sku' => 'GA26P-100',
+        'size' => '10x8',
+        'month' => 'October',
+        'year' => '2026',
+        'framed' => 'Matted',
+    ]);
+
+    $response = $this->withoutMiddleware(Authorize::class)->get(route('paintings.edit', $painting));
+
+    $response->assertOk()
+        ->assertViewIs('paintings.edit')
+        ->assertSee('Autumn Trees')
+        ->assertSee('GA26P-100')
+        ->assertSee('October')
+        ->assertSee('value="2026"', false);
+});
+
+test('edit page returns not found for a missing painting', function () {
+    $response = $this->withoutMiddleware(Authorize::class)->get(route('paintings.edit', 999999));
+
+    $response->assertNotFound();
+});
+
+test('update saves painting details and preserves the existing image', function () {
+    $painting = Painting::factory()->create([
+        'name' => 'Old Name',
+        'sku' => 'GA26P-101',
+        'size' => '10x8',
+        'month' => 'January',
+        'year' => '2025',
+        'image_path' => 'images/paintings/existing.jpg',
+        'framed' => 'Matted',
+    ]);
+
+    $response = $this->withoutMiddleware(Authorize::class)->put(route('paintings.update', $painting), [
+        'name' => 'New Name',
+        'sku' => 'GA26P-101',
+        'size' => '12x9',
+        'month' => 'February',
+        'year' => '2026',
+        'framed' => 'Framed',
+    ]);
+
+    $response->assertRedirect(route('paintings.index'));
+    $this->assertDatabaseHas('paintings', [
+        'id' => $painting->id,
+        'name' => 'New Name',
+        'sku' => 'GA26P-101',
+        'size' => '12x9',
+        'month' => 'February',
+        'year' => '2026',
+        'image_path' => 'images/paintings/existing.jpg',
+        'framed' => 'Framed',
+    ]);
+});
+
+test('update rejects a sku already used by another painting', function () {
+    Painting::factory()->create(['sku' => 'GA26P-102']);
+    $painting = Painting::factory()->create([
+        'name' => 'Original Name',
+        'sku' => 'GA26P-103',
+        'size' => '10x8',
+        'month' => 'January',
+        'year' => '2025',
+        'framed' => 'Matted',
+    ]);
+
+    $response = $this->withoutMiddleware(Authorize::class)->put(route('paintings.update', $painting), [
+        'name' => 'Changed Name',
+        'sku' => 'GA26P-102',
+        'size' => '12x9',
+        'month' => 'February',
+        'year' => '2026',
+        'framed' => 'Framed',
+    ]);
+
+    $response->assertSessionHasErrors('sku');
+    $this->assertDatabaseHas('paintings', [
+        'id' => $painting->id,
+        'name' => 'Original Name',
+        'sku' => 'GA26P-103',
+    ]);
 });

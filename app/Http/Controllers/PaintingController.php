@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Painting;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-
+use Illuminate\Validation\Rule;
+use Illuminate\View\View;
 
 class PaintingController extends Controller
 {
@@ -52,9 +54,9 @@ class PaintingController extends Controller
             'image_path' => 'images/paintings/'.$imageName,
             'framed' => $request->framed]);
 
-         return redirect()->route('paintings.index')
+        return redirect()->route('paintings.index')
             ->withSuccess('New painting is added successfully.');
-    } 
+    }
 
     /**
      * Display the specified resource.
@@ -67,9 +69,9 @@ class PaintingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Painting $painting): View
     {
-        //
+        return view('paintings.edit', compact('painting'));
     }
 
     public function upload(Request $request)
@@ -96,9 +98,31 @@ class PaintingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Painting $painting): RedirectResponse
     {
-        //
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:250'],
+            'sku' => ['required', 'string', 'max:250', Rule::unique('paintings', 'sku')->ignore($painting)],
+            'size' => ['required', 'string', 'max:250'],
+            'month' => ['required', 'string', 'max:250'],
+            'year' => ['required', 'string', 'max:250'],
+            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+            'framed' => ['required', Rule::in(['Framed', 'Matted'])],
+        ]);
+
+        $image = $request->file('image');
+
+        if ($image !== null) {
+            $imageName = time().'.'.$image->extension();
+            $image->move(public_path('images/paintings'), $imageName);
+            $validated['image_path'] = 'images/paintings/'.$imageName;
+        }
+
+        unset($validated['image']);
+        $painting->update($validated);
+
+        return redirect()->route('paintings.index')
+            ->withSuccess('Painting updated successfully.');
     }
 
     /**
