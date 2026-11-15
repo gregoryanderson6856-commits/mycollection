@@ -31,33 +31,36 @@ class PaintingController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $request->validate(
-            [
-                'name' => 'required|string|max:250',
-                'sku' => 'required|string|max:250|unique:paintings',
-                'size' => 'required|string|max:250',
-                'month' => 'required|string|max:250',
-                'year' => 'required|string|max:250',
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-                'framed' => 'string|max:20']);
+   public function store(Request $request)
+{
+    $request->validate([
+        'name' => 'required|string|max:250',
+        'sku' => 'required|string|max:250|unique:paintings',
+        'size' => 'required|string|max:250',
+        'month' => 'required|string|max:250',
+        'year' => 'required|string|max:250',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'framed' => 'nullable|string|max:20',
+    ]);
 
-        $imageName = time().'.'.$request->image->extension();
-        $request->image->move(public_path('images/paintings'), $imageName);
-        Painting::create([
-            'name' => $request->name,
-            'sku' => $request->sku,
-            'size' => $request->size,
-            'month' => $request->month,
-            'year' => $request->year,
-            'image_path' => 'images/paintings/'.$imageName,
-            'framed' => $request->framed]);
+    // Name the file after the unique SKU (e.g., "PNT-001.jpg")
+    $imageName = $request->sku . '.' . $request->image->extension();
+    
+    $request->image->move(public_path('images/paintings'), $imageName);
 
-        return redirect()->route('paintings.index')
-            ->withSuccess('New painting is added successfully.');
-    }
+    Painting::create([
+        'name' => $request->name,
+        'sku' => $request->sku,
+        'size' => $request->size,
+        'month' => $request->month,
+        'year' => $request->year,
+        'image_path' => 'images/paintings/' . $imageName,
+        'framed' => $request->framed,
+    ]);
 
+    return redirect()->route('paintings.index')
+        ->withSuccess('New painting is added successfully.');
+}
     /**
      * Display the specified resource.
      */
