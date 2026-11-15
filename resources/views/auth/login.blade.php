@@ -19,7 +19,7 @@
                     <div class="absolute -right-5 -top-5 size-24 rounded-full bg-[#e6b678]/45 blur-2xl"></div>
                     <div class="relative overflow-hidden rounded-[1.75rem] border-[8px] border-white bg-[#e6e1d4] shadow-[0_28px_70px_-35px_rgba(24,35,33,0.5)]">
                         <img
-                            src="{{ asset('images/paintings/1791158140.jpg') }}"
+                            src="{{ asset('images/paintings/GA25P-040.jpg') }}"
                             alt="A painting from the collection"
                             class="aspect-[16/10] w-full object-cover"
                         />

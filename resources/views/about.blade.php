@@ -32,7 +32,7 @@
                 <div class="absolute -bottom-8 -left-7 size-32 rounded-full bg-[#aab9a8]/50 blur-2xl"></div>
                 <div class="relative overflow-hidden rounded-[2rem] border-[10px] border-white bg-[#e6e1d4] shadow-[0_28px_70px_-35px_rgba(24,35,33,0.5)]">
                     <img
-                        src="{{ asset('images/paintings/1791158557.jpg') }}"
+                        src="{{ asset('images/paintings/GA25P-040.jpg') }}"
                         alt="An original painting from the collection"
                         class="aspect-[4/4.5] w-full object-cover"
                     />
