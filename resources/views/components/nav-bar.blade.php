@@ -49,7 +49,7 @@
     <div class="ml-3">
         <a href="{{ route('cart.index') }}" class="cart-link" style="position: relative; display: inline-block;">
             <!-- Cart Visual Anchor Badge -->
-            🛒 Shopping Cart
+            🛒 Cart
             
             @if($cartCount >= 0)
                 <span class="cart-badge" style="
