@@ -110,7 +110,7 @@ class PaintingController extends Controller
             'month' => ['required', 'string', 'max:250'],
             'year' => ['required', 'string', 'max:250'],
             'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
-            'framed' => ['required', Rule::in(['Framed', 'Matted'])],
+            'framed' => ['required', Rule::in(['Framed', 'Matted', 'Sold'])],
         ]);
 
         $image = $request->file('image');

@@ -112,7 +112,7 @@
                                     class="form-control @error('framed') is-invalid @enderror border p-4"
                                     id="framed"
                                     name="framed"
-                                    value="{{ old('framed', 'Matted') }}"
+                                    value="{{ old('framed', 'Matted', 'Sold') }}"
                                 />
                                 @error('sku')
                                     <span class="text-danger">{{ $message }}</span>

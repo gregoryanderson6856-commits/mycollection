@@ -106,7 +106,7 @@
                             <label for="framed" class="col-md-4 col-form-label text-md-end text-start">Framed</label>
                             <div class="col-md-6">
                                 <select id="framed" name="framed" class="select select-bordered">
-                                    @foreach (['Framed', 'Matted'] as $framing)
+                                    @foreach (['Framed', 'Matted', 'Sold'] as $framing)
                                         <option
                                             value="{{ $framing }}"
                                             @selected(old('framed', $painting->framed) === $framing)

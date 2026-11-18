@@ -54,8 +54,8 @@
             @if($cartCount >= 0)
                 <span class="cart-badge" style="
                     position: absolute;
-                    top: -10px;
-                    right: -15px;
+                    top: -1px;
+                    right: -7px;
                     background-color: #e3342f;
                     color: white;
                     border-radius: 50%;
