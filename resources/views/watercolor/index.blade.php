@@ -44,11 +44,7 @@
                             <div class="mx-auto w-3/4 rounded-t-2xl rounded-b-2xl bg-white px-2 py-3">
                                 <div class="text-center">
                                     <h3 class="font-serif text-sm leading-snug">{{ $watercolor->name }}</h3>
-                                    <p class="mt-1 text-xs leading-tight text-[#68736d]">{{ $watercolor->size }}</p>
-                                    <p class="mt-1 text-xs leading-tight text-[#68736d]">{{ $watercolor->month }} &middot; {{ $watercolor->year }}</p>
-                                    @if ($watercolor->framed)
-                                        <p class="mt-1 text-xs leading-tight text-[#68736d]">{{ $watercolor->framed }}</p>
-                                    @endif
+                                    
                                     @if ($watercolor->price)
                                         <p class="mx-auto mt-2 w-fit rounded-full bg-[#f5eee4] px-2 py-1 text-xs font-semibold text-[#a75c3c]">
                                             ${{ $watercolor->price }}
