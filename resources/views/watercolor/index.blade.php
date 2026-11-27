@@ -56,6 +56,13 @@
                                     @endif
                                 </div>
 
+                                <a
+                                    href="{{ route('watercolor/show', $watercolor) }}"
+                                    class="mt-2 inline-flex w-full items-center justify-center rounded-full border border-[#dedbd2] px-0.5 py-1 text-[0.55rem] font-semibold text-[#34443c] transition hover:border-[#1d302b] hover:bg-[#f5eee4]"
+                                >
+                                    Details
+                                </a>
+
                                 <form action="{{ route('cart.add') }}" method="POST" class="mt-2">
                                     @csrf
                                     <input type="hidden" name="item_type" value="paintings">
